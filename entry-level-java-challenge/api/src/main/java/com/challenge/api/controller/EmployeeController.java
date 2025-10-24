@@ -16,13 +16,21 @@ import org.springframework.web.server.ResponseStatusException;
 
 /**
  * Fill in the missing aspects of this Spring Web REST Controller. Don't forget to add a Service layer.
+ *
+ * Note: Endpoints are open! In a production environment, these would be protected by an API key or JWT authentication
  */
 @RestController
 @RequestMapping("/api/v1/employee")
 public class EmployeeController {
-
+    /**
+     * Employee service used by the controller
+     */
     private final EmployeeService service;
 
+    /**
+     * Constructs an EmployeeController with a specified EmployeeService
+     * @param service the EmployeeService to be used by this controller
+     */
     public EmployeeController(EmployeeService service) {
         this.service = service;
     }
